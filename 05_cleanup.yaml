@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - mkdir -p tmpdir/
+      - defer: { task: cleanup }
+      - echo 'The next command will fail'
+      - blah
+
+  cleanup:
+    cmds:
+      - rm -rf tmpdir/
+      - ls -ld tmpdir

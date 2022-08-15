@@ -1,0 +1,20 @@
+version: '3'
+
+tasks:
+  runme:
+    deps: [goavailable, dockerrunning]
+    cmds:
+      - echo 'Running runme task now'
+
+  goavailable:
+    cmds:
+      - echo 'Running in random order'
+      - cmd: go version
+        silent: true
+
+  dockerrunning:
+    cmds:
+      - echo 'Running in random order'
+      - cmd: docker ps
+        silent: true
+    

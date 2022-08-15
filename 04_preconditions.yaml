@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - echo 'I will only run if all preconditions are met'
+    preconditions:
+      - go version
+      - docker ps

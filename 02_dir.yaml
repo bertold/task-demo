@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  default:
+    dir: another
+    cmds:
+      - pwd
+      - if [ -f file ]; then echo 'I switched directory'; fi
+

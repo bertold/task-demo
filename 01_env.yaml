@@ -1,0 +1,21 @@
+version: '3'
+
+env:
+  GLOBAL: I am global
+
+dotenv: ['.env.personal', '.env']
+
+tasks:
+  default:
+    cmds:
+      - echo 'Here is a global environment variable:' $GLOBAL
+      - echo 'I am just a constant environment variable in this task:' $CONSTANT
+      - echo The first yaml file is $MYVAR in this diretory
+      # built-in variable
+      - echo My OS is {{OS}}
+      # loading variables from environment files
+      - echo my region is $DEFAULT_REGION and my secret is $DEFAULT_SECRET
+    env:
+      CONSTANT: I am fixed
+      MYVAR:
+        sh: ls -1 *.yaml | head -1

@@ -1,0 +1,8 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - echo 'I will only run if any source file is changing'
+    sources:
+      - ./*.yaml
